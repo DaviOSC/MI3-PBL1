@@ -24,6 +24,21 @@ public class Produto
         return vendido;
     }
     
-    public()
+    public String getDescricaoResumida()
+    {
+        return descricaoResumida;
+    }
+    
+    public String getDescricaoDetalhada()
+    {
+        return descricaoDetalhada;
+    }
+    
+    public String getTipo()
+    {
+        return tipo;
+    }
+    
+    
             
 }
