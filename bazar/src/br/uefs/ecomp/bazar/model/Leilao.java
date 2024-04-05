@@ -9,6 +9,7 @@ public class Leilao
     private int status;
     private Produto produto;
     private Usuario vendedor;
+    private Venda venda;
     
     List<Lance> lances;
     List<Usuario> participantes;
@@ -21,6 +22,39 @@ public class Leilao
         this.produto = lProduto;
     }
     
+    public void iniciar()
+    {
+        
+    }
+    
+    public void encerrar()
+    {
+        
+    }
+    
+    public int getStatus()
+    {
+        return status;
+    }
+    
+    public void cadastrarParticipante(Usuario usuario)
+    {
+        participantes.add(usuario);
+    }
+    
+    public void darLanceMinimo(Usuario usuario)
+    {
+        
+    }
+    
+    public void darLance(Usuario usuario, double valor)
+    {
+        
+    }
+    public Venda getVenda()
+    {
+        return venda;
+    }
     
     
 }
