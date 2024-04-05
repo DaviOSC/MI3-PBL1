@@ -1,6 +1,6 @@
 package br.uefs.ecomp.bazar.model;
 import java.util.List;
-
+import java.util.Iterator;
 
 public class Usuario
 {
@@ -31,11 +31,41 @@ public class Usuario
         sistema.adicionaUsuario(novoUsuario);
     }
 
-    public List<Produto> listarProdutosCadastrados()
+    public Iterator<Produto> listarProdutosCadastrados()
     {
-        return produtosCadastrados;
+        return produtosCadastrados.iterator();
     }
     
-
-
+    public void participarLeilao()
+    {
+        
+        
+    }
+    public void cadastrarProduto()
+    {
+        
+    }
+    
+    public Leilao cadastrarLeilao()
+    {
+        Leilao leilao = new Leilao();
+        return leilao;
+    }
+    
+    public void iniciarLeilao()
+    {
+        
+    }
+    public Venda encerrarLeilaoAtivo()
+    {
+        Venda venda = new Venda();
+        return venda;
+    }
+    public Venda darLanceMinimo()
+    {
+        Venda venda = new Venda();
+        return venda;
+        
+    }
+    
 }
