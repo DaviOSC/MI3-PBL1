@@ -47,9 +47,9 @@ public class Usuario
         produtosCadastrados.add(produto);
     }
     
-    public Leilao cadastrarLeilao()
+    public Leilao cadastrarLeilao(double preco, double incremento, Produto produto)
     {
-        Leilao leilao = new Leilao();
+        Leilao leilao = new Leilao(preco, incremento, this, produto);
         return leilao;
     }
     
