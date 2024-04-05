@@ -41,9 +41,10 @@ public class Usuario
         
         
     }
-    public void cadastrarProduto()
+    public void cadastrarProduto(String pTipo, String pDescResum, String pDescDetalh )
     {
-        
+        Produto produto = new Produto(pTipo, pDescResum, pDescDetalh, this);
+        produtosCadastrados.add(produto);
     }
     
     public Leilao cadastrarLeilao()
