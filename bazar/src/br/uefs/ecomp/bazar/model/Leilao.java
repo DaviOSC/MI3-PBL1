@@ -55,6 +55,11 @@ public class Leilao
     {
         return venda;
     }
+    public Lance getUltimoLance()
+    {
+        Lance lance = new Lance();
+        return lance;
+    }
     
     
 }
