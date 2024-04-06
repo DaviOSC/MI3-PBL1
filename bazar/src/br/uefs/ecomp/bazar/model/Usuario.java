@@ -1,5 +1,6 @@
 package br.uefs.ecomp.bazar.model;
-import java.util.List;
+
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Usuario
@@ -11,7 +12,7 @@ public class Usuario
     private String endereco;
     private String telefone;
 
-    List<Produto> produtosCadastrados;
+    private ArrayList<Produto> produtosCadastrados =  new ArrayList<>();
     
     ControllerBazar sistema;
 

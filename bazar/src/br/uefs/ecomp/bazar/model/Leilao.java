@@ -1,5 +1,6 @@
 package br.uefs.ecomp.bazar.model;
-import java.util.List;
+
+import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Leilao
@@ -11,8 +12,8 @@ public class Leilao
     private Usuario vendedor;
     private Venda venda;
     
-    List<Lance> lances;
-    List<Usuario> participantes;
+    private ArrayList<Lance> lances = new ArrayList<>();
+    private ArrayList<Usuario> participantes = new ArrayList<>();
     
     public Leilao(double lPrecoMinimo, double lIncrementoMinimo, Usuario lVendedor, Produto lProduto)
     {
@@ -47,9 +48,18 @@ public class Leilao
         
     }
     
-    public void darLance(Usuario usuario, double valor)
+    public boolean darLance(Usuario usuario, double preco)
     {
-        
+        Lance lance = new Lance(usuario, preco);
+        if (lance.getValor() >= this.precoMinimo)
+        {
+            lances.add(lance);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     public Venda getVenda()
     {
@@ -57,8 +67,8 @@ public class Leilao
     }
     public Lance getUltimoLance()
     {
-        Lance lance = new Lance();
-        return lance;
+        Lance ultimoLance = lances.get(lances.size()-1);
+        return ultimoLance;
     }
     
     
