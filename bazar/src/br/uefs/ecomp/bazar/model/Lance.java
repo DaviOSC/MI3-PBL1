@@ -5,11 +5,6 @@ public class Lance
     private double valor;
     private Usuario participante;
     
-    public void fecharVenda()
-    {
-        
-    }
-    
     public Lance(Usuario lParticipante, double lValor)
     {
         this.valor = lValor;
