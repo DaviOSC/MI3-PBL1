@@ -2,6 +2,7 @@ package br.uefs.ecomp.bazar.model;
 
 public class Venda
 {
+    
     private double valor;
     private Usuario comprador;
     private Usuario vendedor;

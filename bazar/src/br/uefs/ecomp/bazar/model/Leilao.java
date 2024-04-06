@@ -5,6 +5,9 @@ import java.util.Iterator;
 
 public class Leilao
 {
+    public static final int CADASTRADO = 1;
+    public static final int INICIADO = 2;
+    public static final int ENCERRADO = 3;
     private double precoMinimo;
     private double incrementoMinimo;
     private int status;
@@ -21,16 +24,17 @@ public class Leilao
         this.incrementoMinimo = lIncrementoMinimo;
         this.vendedor = lVendedor;
         this.produto = lProduto;
+        this.status = 1;
     }
     
     public void iniciar()
     {
-        
+        this.status = 2;
     }
     
     public void encerrar()
     {
-        
+        this.status = 3;
     }
     
     public int getStatus()
