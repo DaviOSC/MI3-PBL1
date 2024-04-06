@@ -37,7 +37,7 @@ public class Usuario
         return produtosCadastrados.iterator();
     }
     
-    public void participarLeilao()
+    public void participarLeilao(Leilao leilao)
     {
         
         
@@ -54,7 +54,7 @@ public class Usuario
         return leilao;
     }
     
-    public void iniciarLeilao()
+    public void iniciarLeilao(Leilao leilao)
     {
         
     }
