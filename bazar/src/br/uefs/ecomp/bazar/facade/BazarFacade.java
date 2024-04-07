@@ -7,7 +7,7 @@ import br.uefs.ecomp.bazar.model.Leilao;
 import br.uefs.ecomp.bazar.model.Produto;
 import br.uefs.ecomp.bazar.model.Usuario;
 import br.uefs.ecomp.bazar.model.Venda;
-    
+
 public class BazarFacade {
 
     ControllerBazar cb;
@@ -19,7 +19,7 @@ public class BazarFacade {
     //chamadas do cb do usuario
     public Usuario cadastrarUsuario(String login, String nome, String senha,
             String cpf, String endereco, String telefone) {
-        return cb.adicionaUsuario(login, nome, senha, cpf, endereco, telefone);
+        return cb.cadastrarUsuario(login, nome, senha, cpf, endereco, telefone);
     }
     
     public Usuario fazerLogin(String login, String senha) {

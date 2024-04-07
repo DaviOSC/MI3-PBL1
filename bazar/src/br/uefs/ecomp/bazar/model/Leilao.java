@@ -49,7 +49,7 @@ public class Leilao
     
     public void darLanceMinimo(Usuario usuario)
     {
-        
+      usuario.darLanceMinimo();
     }
     
     public boolean darLance(Usuario usuario, double preco)

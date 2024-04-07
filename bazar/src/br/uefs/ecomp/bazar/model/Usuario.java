@@ -25,11 +25,14 @@ public class Usuario
         this.endereco = endereco;
         this.telefone = telefone;
     }
-
-    public void cadastrarUsuario()
+    
+    public String getLogin()
     {
-        Usuario novoUsuario = new Usuario(login, nome, senha, cpf, endereco, telefone);
-        sistema.adicionaUsuario(novoUsuario);
+        return this.login;
+    }
+    public String getSenha()
+    {
+         return this.senha;
     }
 
     public Iterator<Produto> listarProdutosCadastrados()
@@ -42,10 +45,11 @@ public class Usuario
         
         
     }
-    public void cadastrarProduto(String pTipo, String pDescResum, String pDescDetalh )
+    public Produto cadastrarProduto(String pTipo, String pDescResum, String pDescDetalh )
     {
         Produto produto = new Produto(pTipo, pDescResum, pDescDetalh, this);
         produtosCadastrados.add(produto);
+        return produto;
     }
     
     public Leilao cadastrarLeilao(double preco, double incremento, Produto produto)
@@ -58,16 +62,21 @@ public class Usuario
     {
         
     }
+    
+    public void darLance(Double valor)
+    {
+        
+    }
+    
+    public void darLanceMinimo()
+    {
+        
+    }
     public Venda encerrarLeilaoAtivo()
     {
         Venda venda = new Venda();
         return venda;
     }
-    public Venda darLanceMinimo()
-    {
-        Venda venda = new Venda();
-        return venda;
-        
-    }
+    
     
 }
