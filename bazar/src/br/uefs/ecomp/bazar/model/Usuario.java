@@ -11,11 +11,10 @@ public class Usuario
     private String cpf;
     private String endereco;
     private String telefone;
+    private Leilao leilaoAtivo;
 
     private ArrayList<Produto> produtosCadastrados =  new ArrayList<>();
     
-    ControllerBazar sistema;
-
     public Usuario(String login, String nome, String senha, String cpf, String endereco, String telefone)
     {
         this.login = login;
@@ -60,7 +59,7 @@ public class Usuario
     
     public void iniciarLeilao(Leilao leilao)
     {
-        
+        this.leilaoAtivo = leilao;
     }
     
     public void darLance(Double valor)

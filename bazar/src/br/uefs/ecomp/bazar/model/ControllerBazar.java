@@ -13,8 +13,7 @@ public class ControllerBazar
   
 
     public ControllerBazar() {
-        this.listaUsuarios = new ArrayList<>();
-        this.listaLeiloes = new ArrayList<>();
+
     }
 
     public int quantidadeUsuarios()
@@ -58,7 +57,7 @@ public class ControllerBazar
 
     }
     
-    public Iterator listarProdutosCadastrados()
+    public Iterator<Produto> listarProdutosCadastrados()
     {
         return usuarioLogado.listarProdutosCadastrados();
     }
