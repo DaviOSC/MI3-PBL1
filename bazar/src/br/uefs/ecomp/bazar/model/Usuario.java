@@ -31,7 +31,7 @@ public class Usuario
     }
     public String getSenha()
     {
-         return this.senha;
+        return this.senha;
     }
 
     public Iterator<Produto> listarProdutosCadastrados()
@@ -41,7 +41,7 @@ public class Usuario
     
     public void participarLeilao(Leilao leilao)
     {
-        
+        leilao.cadastrarParticipante(this);
         
     }
     public Produto cadastrarProduto(String pTipo, String pDescResum, String pDescDetalh )

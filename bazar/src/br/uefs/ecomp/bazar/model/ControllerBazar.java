@@ -5,16 +5,12 @@ import java.util.Iterator;
 
 public class ControllerBazar
 {
-    private ArrayList<Usuario> listaUsuarios = new ArrayList<>();
-    private ArrayList<Leilao> listaLeiloes = new ArrayList<>();
     public Usuario usuarioLogado;
     public int quantidadeUsuarios;
+    
+    private ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+    private ArrayList<Leilao> listaLeiloes = new ArrayList<>();
   
-
-    public ControllerBazar() {
-
-    }
-
     public int quantidadeUsuarios()
     {
         this.quantidadeUsuarios = listaUsuarios.size();
@@ -63,8 +59,7 @@ public class ControllerBazar
     
     public Leilao cadastrarLeilao(Produto produto, double precoMinimo, double incrementoMinimo)
     {
-        Leilao leilao = new Leilao(precoMinimo, incrementoMinimo, this.usuarioLogado, produto);
-        listaLeiloes.add(leilao);
+        Leilao leilao = this.usuarioLogado.cadastrarLeilao(precoMinimo, incrementoMinimo, produto);
         return leilao;
     }
     

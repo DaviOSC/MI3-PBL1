@@ -9,6 +9,15 @@ public class Venda
     private Produto produto;
     private Leilao leilao;
     
+    public Venda(Lance vLance, Leilao vLeilao)
+    {
+        this.valor = vLance.getValor();
+        this.comprador = vLance.getParticipante();
+        this.vendedor = vLeilao.getVendedor();
+        this.produto = vLeilao.getProduto();
+        this.leilao = vLeilao;
+    }
+    
     public double getValor()
     {
         return valor;
