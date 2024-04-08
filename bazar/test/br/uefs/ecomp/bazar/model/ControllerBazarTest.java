@@ -35,7 +35,7 @@ public class ControllerBazarTest {
         assertEquals(1, cb.quantidadeUsuarios());
         u2 = cb.cadastrarUsuario("joao", "Joao dos Santos", "senha2", "987654321-01", "Rua Pessoa, 12, Centro", "7532216543");
         u3 = cb.cadastrarUsuario("pedro", "Pedro da Silva", "senha3", "456789123-01", "Rua Andrade, 45, Cidade Nova", "7532217890");
-        assertEquals(3, cb.quantidadeUsuarios);
+        assertEquals(3, cb.quantidadeUsuarios());
     }
 
     @Test

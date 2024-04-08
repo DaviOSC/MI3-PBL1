@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class ControllerBazar
 {
-    public Usuario usuarioLogado;
+    private Usuario usuarioLogado;
     public int quantidadeUsuarios;
     
     private ArrayList<Usuario> listaUsuarios = new ArrayList<>();

@@ -64,7 +64,7 @@ public class Usuario
     
     public void darLance(Double valor)
     {
-        
+        leilaoAtivo.darLance(this, valor);
     }
     
     public void darLanceMinimo()
@@ -73,8 +73,8 @@ public class Usuario
     }
     public Venda encerrarLeilaoAtivo()
     {
-        Venda venda = new Venda();
-        return venda;
+        return leilaoAtivo.getVenda();
+        
     }
     
     

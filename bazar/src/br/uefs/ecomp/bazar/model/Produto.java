@@ -16,7 +16,6 @@ public class Produto
         this.descricaoDetalhada = pDescDetalh;
         this.vendedor = pVendedor;
         this.vendido = false;
-        
     }
     
     public boolean isVendido()
