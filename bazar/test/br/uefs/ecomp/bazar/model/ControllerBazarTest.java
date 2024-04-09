@@ -7,7 +7,6 @@ import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 
-
 public class ControllerBazarTest {
 
     private Usuario u1, u2, u3;

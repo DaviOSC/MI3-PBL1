@@ -6,14 +6,20 @@ import java.util.Iterator;
 public class ControllerBazar
 {
     private Usuario usuarioLogado;
-    public int quantidadeUsuarios;
     
     private ArrayList<Usuario> listaUsuarios = new ArrayList<>();
     private ArrayList<Leilao> listaLeiloes = new ArrayList<>();
-  
+    //public MeuArrayList<Leilao> leiloes = new MeuArrayList<>();
+
+    
+    public class MeuArrayList<T> extends ArrayList<T> {
+        public int tamanho()
+        {
+            return this.size();
+        }
+}
     public int quantidadeUsuarios()
     {
-        this.quantidadeUsuarios = listaUsuarios.size();
         return listaUsuarios.size();
     }
    
@@ -92,5 +98,10 @@ public class ControllerBazar
     {
         return usuarioLogado.encerrarLeilaoAtivo();
         
+    }
+    
+    public int tamanho()
+    {
+        return leiloes.size();
     }
 }
