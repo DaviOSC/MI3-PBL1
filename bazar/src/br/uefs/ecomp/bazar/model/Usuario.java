@@ -13,7 +13,8 @@ public class Usuario
     private String telefone;
     private Leilao leilaoAtivo;
 
-    private ArrayList<Produto> produtosCadastrados =  new ArrayList<>();
+    private ArrayList produtosCadastrados =  new ArrayList<>();
+
     
     public Usuario(String login, String nome, String senha, String cpf, String endereco, String telefone)
     {
@@ -34,16 +35,18 @@ public class Usuario
         return this.senha;
     }
 
-    public Iterator<Produto> listarProdutosCadastrados()
+    public Iterator listarProdutosCadastrados()
     {
         return produtosCadastrados.iterator();
+       
     }
     
     public void participarLeilao(Leilao leilao)
     {
         leilao.cadastrarParticipante(this);
-        
+        this.leilaoAtivo = leilao;
     }
+          
     public Produto cadastrarProduto(String pTipo, String pDescResum, String pDescDetalh )
     {
         Produto produto = new Produto(pTipo, pDescResum, pDescDetalh, this);
@@ -69,12 +72,12 @@ public class Usuario
     
     public void darLanceMinimo()
     {
-        
+       leilaoAtivo.darLanceMinimo(this);
     }
     public Venda encerrarLeilaoAtivo()
     {
+        leilaoAtivo.encerrar();
         return leilaoAtivo.getVenda();
-        
     }
     
     

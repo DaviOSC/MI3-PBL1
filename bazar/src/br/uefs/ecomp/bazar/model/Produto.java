@@ -38,6 +38,10 @@ public class Produto
         return tipo;
     }
     
+    public void setVendido()
+    {
+        this.vendido = true;
+    }
     
             
 }

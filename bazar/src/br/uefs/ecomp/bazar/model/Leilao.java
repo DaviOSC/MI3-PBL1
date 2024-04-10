@@ -14,6 +14,7 @@ public class Leilao
     private Produto produto;
     private Usuario vendedor;
     private Venda venda;
+    private Lance ultimoLance;
     
     private ArrayList<Lance> lances = new ArrayList<>();
     private ArrayList<Usuario> participantes = new ArrayList<>();
@@ -38,11 +39,13 @@ public class Leilao
     public void iniciar()
     {
         this.status = 1;
+        this.ultimoLance = null;
     }
     
     public void encerrar()
     {
         this.status = 2;
+        this.produto.setVendido();
     }
     
     public int getStatus()
@@ -53,19 +56,23 @@ public class Leilao
     public void cadastrarParticipante(Usuario usuario)
     {
         participantes.add(usuario);
+        
     }
     
     public void darLanceMinimo(Usuario usuario)
     {
-        usuario.darLanceMinimo();
+        Lance lance = new Lance(usuario, this.precoMinimo + this.incrementoMinimo);
+        this.ultimoLance = lance;
+        this.precoMinimo = lance.getValor();
     }
     
     public boolean darLance(Usuario usuario, double preco)
     {
         Lance lance = new Lance(usuario, preco);
-        if (lance.getValor() >= this.precoMinimo)
+        if (lance.getValor() >= (this.precoMinimo + this.incrementoMinimo))
         {
-            lances.add(lance);
+            this.ultimoLance = lance;
+            this.precoMinimo = lance.getValor()+ this.incrementoMinimo;
             return true;
         }
         else
@@ -75,21 +82,18 @@ public class Leilao
     }
     public Venda getVenda()
     {
-        Lance maiorLance = lances.get(0);
-        for(Lance lance : lances)
+        if (this.venda == null && this.ultimoLance != null)
         {
-            if(lance.getValor() > maiorLance.getValor())
-            {
-                maiorLance = lance;
-            }
+            this.venda = new Venda(this.ultimoLance, this);
         }
-        Venda finalVenda = new Venda(maiorLance, this);
-        return finalVenda;
+        
+        return this.venda;
+        
+        
     }
     public Lance getUltimoLance()
     {
-        Lance ultimoLance = lances.get(lances.size()-1);
-        return ultimoLance;
+        return this.ultimoLance;
     }
     
     

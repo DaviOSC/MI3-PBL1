@@ -1,14 +1,10 @@
+package br.uefs.ecomp.bazar.model;
+
 import junit.framework.TestCase;
 import java.util.Iterator;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import br.uefs.ecomp.bazar.model.Usuario;
-import br.uefs.ecomp.bazar.model.Produto;
-import br.uefs.ecomp.bazar.model.Leilao;
-import br.uefs.ecomp.bazar.model.Venda;
-
 
 public class UsuarioTest extends TestCase {
 
