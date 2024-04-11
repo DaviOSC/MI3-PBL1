@@ -7,17 +7,47 @@ public class ControllerBazar
 {
     private Usuario usuarioLogado;
     
-    private ArrayList<Usuario> listaUsuarios = new ArrayList<>();
-    private ArrayList<Leilao> listaLeiloes = new ArrayList<>();
-    //public MeuArrayList<Leilao> leiloes = new MeuArrayList<>();
-
+    private ArrayList listaUsuarios = new ArrayList<>();
+    public ArrayListModficada leiloes = new ArrayListModficada<>();
     
-    public class MeuArrayList<T> extends ArrayList<T> {
+    public class ArrayListModficada<T>
+    {
+        private ArrayList<T> arrayList;
+
+        public ArrayListModficada()
+        {
+            this.arrayList = new ArrayList<>();
+        }
+
+       
         public int tamanho()
         {
-            return this.size();
+            return arrayList.size();
         }
-}
+
+        
+        public T recupera(int indice)
+        {
+            return arrayList.get(indice);
+        }
+        
+        public void add(T elemento)
+        {
+            arrayList.add(elemento);
+        }
+
+        public void remove(int indice)
+        {
+            arrayList.remove(indice);
+        }
+        
+        public Iterator iterator()
+        {
+            return arrayList.iterator();
+        }
+    }
+    
+    
     public int quantidadeUsuarios()
     {
         return listaUsuarios.size();
@@ -30,15 +60,16 @@ public class ControllerBazar
        return usuario;
     }
 
-    public ArrayList<Leilao> getListaLeiloes()
+    public ArrayListModficada getListaLeiloes()
     {
-        return listaLeiloes;
+        return leiloes;
     }
     
     public Usuario fazerLogin(String login, String senha)
     {
-        for (Usuario usuario : listaUsuarios)
+        for (Object obj : listaUsuarios)
         {
+            Usuario usuario = (Usuario) obj;
             if(usuario.getLogin().equals(login))
             {
                 if(usuario.getSenha().equals(senha))
@@ -66,6 +97,7 @@ public class ControllerBazar
     public Leilao cadastrarLeilao(Produto produto, double precoMinimo, double incrementoMinimo)
     {
         Leilao leilao = this.usuarioLogado.cadastrarLeilao(precoMinimo, incrementoMinimo, produto);
+        leiloes.add(leilao);
         return leilao;
     }
     
@@ -74,9 +106,19 @@ public class ControllerBazar
         leilao.iniciar();
     }
     
-    public Iterator<Leilao> listarLeiloesIniciados()
+    public Iterator listarLeiloesIniciados()
     {
-        return listaLeiloes.iterator();
+        ArrayList leiloesIniciados = new ArrayList<>();
+        for(int i=0;i<leiloes.tamanho();i++)
+        {
+            Object obj = leiloes.recupera(i);
+            Leilao leilao = (Leilao) obj;
+            if(leilao.getStatus() == Leilao.INICIADO)
+            {
+                leiloesIniciados.add(leilao);
+            }
+        }
+        return leiloesIniciados.iterator();
     }
     
     public void participarLeilao(Leilao leilao)
@@ -97,11 +139,6 @@ public class ControllerBazar
     public Venda encerrarLeilao()
     {
         return usuarioLogado.encerrarLeilaoAtivo();
-        
     }
     
-    public int tamanho()
-    {
-        return leiloes.size();
-    }
 }

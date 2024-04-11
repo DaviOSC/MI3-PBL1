@@ -34,6 +34,11 @@ public class Usuario
     {
         return this.senha;
     }
+    
+    public void setLeilaoAtivo(Leilao leilao)
+    {
+        this.leilaoAtivo = leilao;
+    }
 
     public Iterator listarProdutosCadastrados()
     {

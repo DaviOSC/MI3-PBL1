@@ -40,6 +40,7 @@ public class Leilao
     {
         this.status = 1;
         this.ultimoLance = null;
+        vendedor.setLeilaoAtivo(this);
     }
     
     public void encerrar()

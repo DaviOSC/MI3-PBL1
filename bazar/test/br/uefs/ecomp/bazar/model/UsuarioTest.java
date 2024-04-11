@@ -35,6 +35,7 @@ public class UsuarioTest extends TestCase {
 
         u1.cadastrarProduto("telefone", "iPhone 4S", "Apple iPhone 4S");
         iterador = u1.listarProdutosCadastrados();        
+        iterador.next();
         produto = (Produto) iterador.next();
         assertEquals("telefone", produto.getTipo());
         assertEquals("iPhone 4S", produto.getDescricaoResumida());
