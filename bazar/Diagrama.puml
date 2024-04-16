@@ -1,0 +1,16 @@
+@startuml
+class br.uefs.ecomp.bazar.model.ControllerBazar
+class br.uefs.ecomp.bazar.model.Lance
+class br.uefs.ecomp.bazar.model.Leilao
+class br.uefs.ecomp.bazar.model.Produto
+class br.uefs.ecomp.bazar.model.Usuario
+class br.uefs.ecomp.bazar.model.Venda
+class java.util.ArrayList
+class java.util.Iterator
+br.uefs.ecomp.bazar.model.ControllerBazar ..> java.util.ArrayList
+br.uefs.ecomp.bazar.model.ControllerBazar ..> java.util.Iterator
+br.uefs.ecomp.bazar.model.Leilao ..> java.util.ArrayList
+br.uefs.ecomp.bazar.model.Leilao ..> java.util.Iterator
+br.uefs.ecomp.bazar.model.Usuario ..> java.util.ArrayList
+br.uefs.ecomp.bazar.model.Usuario ..> java.util.Iterator
+@enduml

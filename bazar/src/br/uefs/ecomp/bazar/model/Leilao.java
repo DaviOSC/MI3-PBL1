@@ -16,7 +16,6 @@ public class Leilao
     private Venda venda;
     private Lance ultimoLance;
     
-    private ArrayList<Lance> lances = new ArrayList<>();
     private ArrayList<Usuario> participantes = new ArrayList<>();
     
     public Leilao(double lPrecoMinimo, double lIncrementoMinimo, Usuario lVendedor, Produto lProduto)
