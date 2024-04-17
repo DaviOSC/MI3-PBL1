@@ -2,12 +2,14 @@ package br.uefs.ecomp.bazar.model;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.HashMap;
 
 public class ControllerBazar
 {
     private Usuario usuarioLogado;
     
     private ArrayList listaUsuarios = new ArrayList<>();
+    private HashMap<String, Usuario> mapaUsuarios = new HashMap<>();
     public ArrayListModficada leiloes = new ArrayListModficada<>();
     
     public class ArrayListModficada<T>
@@ -50,13 +52,15 @@ public class ControllerBazar
     
     public int quantidadeUsuarios()
     {
-        return listaUsuarios.size();
+        //return listaUsuarios.size();
+        return mapaUsuarios.size();
     }
    
     public Usuario cadastrarUsuario(String uLogin, String uNome, String uSenha, String uCpf, String uEndereco, String uTelefone)
     {
        Usuario usuario = new Usuario(uLogin, uNome, uSenha, uCpf, uEndereco, uTelefone);
-       listaUsuarios.add(usuario);
+       mapaUsuarios.put(uLogin, usuario);
+       //listaUsuarios.add(usuario);
        return usuario;
     }
 
@@ -64,23 +68,48 @@ public class ControllerBazar
     {
         return leiloes;
     }
-    
     public Usuario fazerLogin(String login, String senha)
     {
-        for (Object obj : listaUsuarios)
-        {
-            Usuario usuario = (Usuario) obj;
-            if(usuario.getLogin().equals(login))
+        Usuario usuario = mapaUsuarios.get(login);
+        if (usuario != null)
+        { 
+            if (usuario.getSenha().equals(senha))
             {
-                if(usuario.getSenha().equals(senha))
-                {
-                    this.usuarioLogado = usuario;
-                    return usuario;
-                }
+                this.usuarioLogado = usuario;
+                return usuario;
             }
         }
         return null;
     }
+
+  
+//    public Usuario fazerLogin(String login, String senha)
+//    {
+//        Usuario usuario = mapaUsuarios.get(login);
+//        if(usuario != null)
+//        {       
+//            if (usuario.getSenha().equals(senha));
+//            {
+//                this.usuarioLogado = usuario;
+//                return usuario;
+//            }
+//            
+//            
+//        }
+//        return null;        
+////        for (Object obj : listaUsuarios)
+////        {
+////            Usuario usuario = (Usuario) obj;
+////            if(usuario.getLogin().equals(login))
+////            {
+////                if(usuario.getSenha().equals(senha))
+////                {
+////                    this.usuarioLogado = usuario;
+////                    return usuario;
+////                }
+////            }
+////        }
+//    }
     
     public Produto cadastrarProduto(String tipo, String descricaoResumida, String descricaoDetalhada)
     {
