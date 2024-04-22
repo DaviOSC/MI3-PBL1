@@ -11,7 +11,7 @@ public class Usuario
     private String cpf;
     private String endereco;
     private String telefone;
-    private Leilao leilaoAtivo;
+    public Leilao leilaoAtivo;
 
     private ArrayList produtosCadastrados =  new ArrayList<>();
 
@@ -68,6 +68,7 @@ public class Usuario
     public void iniciarLeilao(Leilao leilao)
     {
         this.leilaoAtivo = leilao;
+        this.leilaoAtivo.iniciar();
     }
     
     public void darLance(Double valor)

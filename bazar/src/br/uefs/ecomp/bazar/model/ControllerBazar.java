@@ -8,9 +8,8 @@ public class ControllerBazar
 {
     private Usuario usuarioLogado;
     
-    private ArrayList listaUsuarios = new ArrayList<>();
     private HashMap<String, Usuario> mapaUsuarios = new HashMap<>();
-    public ArrayListModficada leiloes = new ArrayListModficada<>();
+    public ArrayListModficada<Leilao> leiloes = new ArrayListModficada<>();
     
     public class ArrayListModficada<T>
     {
@@ -52,7 +51,6 @@ public class ControllerBazar
     
     public int quantidadeUsuarios()
     {
-        //return listaUsuarios.size();
         return mapaUsuarios.size();
     }
    
@@ -60,7 +58,6 @@ public class ControllerBazar
     {
        Usuario usuario = new Usuario(uLogin, uNome, uSenha, uCpf, uEndereco, uTelefone);
        mapaUsuarios.put(uLogin, usuario);
-       //listaUsuarios.add(usuario);
        return usuario;
     }
 
@@ -81,35 +78,6 @@ public class ControllerBazar
         }
         return null;
     }
-
-  
-//    public Usuario fazerLogin(String login, String senha)
-//    {
-//        Usuario usuario = mapaUsuarios.get(login);
-//        if(usuario != null)
-//        {       
-//            if (usuario.getSenha().equals(senha));
-//            {
-//                this.usuarioLogado = usuario;
-//                return usuario;
-//            }
-//            
-//            
-//        }
-//        return null;        
-////        for (Object obj : listaUsuarios)
-////        {
-////            Usuario usuario = (Usuario) obj;
-////            if(usuario.getLogin().equals(login))
-////            {
-////                if(usuario.getSenha().equals(senha))
-////                {
-////                    this.usuarioLogado = usuario;
-////                    return usuario;
-////                }
-////            }
-////        }
-//    }
     
     public Produto cadastrarProduto(String tipo, String descricaoResumida, String descricaoDetalhada)
     {

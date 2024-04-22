@@ -6,9 +6,6 @@ import java.util.Iterator;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.uefs.ecomp.bazar.model.Usuario;
-
-
 public class UsuarioTest extends TestCase {
 
     private Usuario u1, u2, u3;
