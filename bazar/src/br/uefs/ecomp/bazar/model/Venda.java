@@ -9,6 +9,7 @@ public class Venda
     private Produto produto;
     private Leilao leilao;
     
+     // Construtor padrão da classe
     public Venda(Lance vLance, Leilao vLeilao)
     {
         this.valor = vLance.getValor();
@@ -17,7 +18,7 @@ public class Venda
         this.produto = vLeilao.getProduto();
         this.leilao = vLeilao;
     }
-    
+    // métodos que retornam atributos da Venda
     public double getValor()
     {
         return valor;
