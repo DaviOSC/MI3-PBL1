@@ -6,9 +6,9 @@ import java.util.Iterator;
 public class Leilao
 {
     // Constantes para representar os estados de um leilão qualquer:
-    public static final int CADASTRADO = 0;
-    public static final int INICIADO = 1;
-    public static final int ENCERRADO = 2;
+    static final int CADASTRADO = 0;
+    static final int INICIADO = 1;
+    static final int ENCERRADO = 2;
     
     private double precoMinimo;
     private double incrementoMinimo;

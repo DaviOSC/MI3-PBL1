@@ -12,7 +12,7 @@ public class ControllerBazar
     //Estrutura que armazena os usuarios cadastrados; facilitando posteriormente a busca
     private HashMap<String, Usuario> mapaUsuarios = new HashMap<>();
     // Estrutura criada para armazenar os leilões
-    public ArrayListModficada<Leilao> leiloes = new ArrayListModficada<>();
+    ArrayListModficada<Leilao> leiloes = new ArrayListModficada<>();
     // Classe criada para se adequar aos testes
     public class ArrayListModficada<T>
     {
