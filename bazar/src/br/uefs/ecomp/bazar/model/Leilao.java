@@ -47,10 +47,17 @@ public class Leilao
         this.ultimoLance = null;
         vendedor.setLeilaoAtivo(this);
     }
-    // define o status como encerrado.
+    // define o status como encerrado e gera uma venda.
     public void encerrar()
     {
         this.status = ENCERRADO;
+        // verifica se existe uma venda e se um lance já foi dado
+        if (this.venda == null && this.ultimoLance != null)
+        {
+            this.venda = new Venda(this.ultimoLance, this);
+            // modfica o status do produto
+            this.produto.setVendido();
+        }
     }
     
     public int getStatus()
@@ -88,17 +95,9 @@ public class Leilao
             return false;
         }
     }
-    //cria e retorna uma venda para o leilão;
+    
     public Venda getVenda()
     {
-        // verifica se existe uma venda e se um lance já foi dado
-        if (this.venda == null && this.ultimoLance != null)
-        {
-            this.venda = new Venda(this.ultimoLance, this);
-            // modfica o status do produto
-            this.produto.setVendido();
-        }
-        
         return this.venda;
     }
     // retorna o ultimo lance do leilão;
