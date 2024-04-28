@@ -1,7 +1,6 @@
 package br.uefs.ecomp.bazar.model;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Leilao
 {

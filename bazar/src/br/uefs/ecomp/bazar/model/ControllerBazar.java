@@ -120,9 +120,9 @@ public class ControllerBazar
     // listagem dos leilões que estão com o status iniciado
     public Iterator listarLeiloesIniciados()
     {
-        // criação de uma estrutura para armazenar os leilões iniciados
+
         ArrayList leiloesIniciados = new ArrayList<>();
-        // iterator para percorrer a lista modficada de leilões 
+
         Iterator<Leilao> iterator = leiloes.iterator();
         
         // enquanto tiverem itens na lista, o iterator percorre a estrutora
