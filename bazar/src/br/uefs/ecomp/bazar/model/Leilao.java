@@ -20,7 +20,6 @@ public class Leilao
     //estrutura para armazenar os participantes do leilão 
     private ArrayList<Usuario> participantes = new ArrayList<>();
     
-    // Construtor padrão da classe
     public Leilao(double lPrecoMinimo, double lIncrementoMinimo, Usuario lVendedor, Produto lProduto)
     {
         this.precoMinimo = lPrecoMinimo;

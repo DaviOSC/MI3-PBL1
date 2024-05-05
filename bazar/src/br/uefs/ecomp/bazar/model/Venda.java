@@ -2,14 +2,12 @@ package br.uefs.ecomp.bazar.model;
 
 public class Venda
 {
-    
     private double valor;
     private Usuario comprador;
     private Usuario vendedor;
     private Produto produto;
     private Leilao leilao;
     
-     // Construtor padrão da classe
     public Venda(Lance vLance, Leilao vLeilao)
     {
         this.valor = vLance.getValor();
@@ -18,7 +16,7 @@ public class Venda
         this.produto = vLeilao.getProduto();
         this.leilao = vLeilao;
     }
-    // métodos que retornam atributos da Venda
+
     public double getValor()
     {
         return valor;

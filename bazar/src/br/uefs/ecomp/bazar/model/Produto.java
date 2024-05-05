@@ -9,7 +9,6 @@ public class Produto
     private boolean vendido;
     private Usuario vendedor;
     
-    // Construtor padrão da classe
     public Produto(String pTipo, String pDescResum, String pDescDetalh, Usuario pVendedor)
     {
         this.tipo = pTipo;
@@ -19,7 +18,6 @@ public class Produto
         this.vendido = false;
     }
     
-    // métodos que retornam ou modficam atributos do Produto
     public boolean isVendido()
     {
         return vendido;

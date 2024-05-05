@@ -15,7 +15,6 @@ public class Usuario
 
     private ArrayList produtosCadastrados =  new ArrayList<>();
 
-    // Construtor padrão da classe
     public Usuario(String login, String nome, String senha, String cpf, String endereco, String telefone)
     {
         this.login = login;
