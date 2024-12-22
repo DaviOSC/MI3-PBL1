@@ -11,7 +11,7 @@ public class ControllerBazar
     
     //Estrutura que armazena os usuarios cadastrados; facilitando posteriormente a busca
     private HashMap<String, Usuario> mapaUsuarios = new HashMap<>();
-    // Estrutura criada para armazenar os leilões
+    // Estrutura criada para armazenar os leilï¿½es
     ArrayListModficada leiloes = new ArrayListModficada<>();
     // Classe criada para se adequar aos testes
     public class ArrayListModficada<T>
@@ -52,13 +52,13 @@ public class ControllerBazar
         }
     }
     
-    // retorna a quantidade de itens no hashmap que armazena os usuários
+    // retorna a quantidade de itens no hashmap que armazena os usuï¿½rios
     public int quantidadeUsuarios()
     {
         return mapaUsuarios.size();
     }
     
-    //cria um novo usuário e adiciona na hashmap de armazenamento.
+    //cria um novo usuï¿½rio e adiciona na hashmap de armazenament.
     public Usuario cadastrarUsuario(String uLogin, String uNome, String uSenha, String uCpf, String uEndereco, String uTelefone)
     {
        Usuario usuario = new Usuario(uLogin, uNome, uSenha, uCpf, uEndereco, uTelefone);
@@ -67,7 +67,7 @@ public class ControllerBazar
     }
     
     
-    // retorna a lista de leilões
+    // retorna a lista de leilï¿½es
     public ArrayListModficada getListaLeiloes()
     {
         return leiloes;
@@ -89,7 +89,7 @@ public class ControllerBazar
                 return usuario;
             }
         }
-        // caso não consiga executar o login
+        // caso nï¿½o consiga executar o login
         return null;
     }
     
@@ -105,19 +105,19 @@ public class ControllerBazar
     {
         return usuarioLogado.listarProdutosCadastrados();
     }
-    // chama o metodo cadastra leilão do usuario logado, que retorna o leilão criado, e o adiciona na lista de leilões
+    // chama o metodo cadastra leilï¿½o do usuario logado, que retorna o leilï¿½o criado, e o adiciona na lista de leilï¿½es
     public Leilao cadastrarLeilao(Produto produto, double precoMinimo, double incrementoMinimo)
     {
         Leilao leilao = this.usuarioLogado.cadastrarLeilao(precoMinimo, incrementoMinimo, produto);
         leiloes.add(leilao);
         return leilao;
     }
-    // inicia um leilão selecionado como parametro
+    // inicia um leilï¿½o selecionado como parametro
     public void iniciarLeilao(Leilao leilao)
     {
         leilao.iniciar();
     }
-    // listagem dos leilões que estão com o status iniciado
+    // listagem dos leilï¿½es que estï¿½o com o status iniciado
     public Iterator listarLeiloesIniciados()
     {
 
@@ -130,32 +130,32 @@ public class ControllerBazar
         {
             Leilao leilao = iterator.next();
             
-            // se o atributo status do objeto leilão for correspondente ao atributo INICIADO da classe leilão
+            // se o atributo status do objeto leilï¿½o for correspondente ao atributo INICIADO da classe leilï¿½o
             if (leilao.getStatus() == Leilao.INICIADO)
             {
-                // addiciona na lista apenas os leilões que estão iniciados de acordo com seu status
+                // addiciona na lista apenas os leilï¿½es que estï¿½o iniciados de acordo com seu status
                 leiloesIniciados.add(leilao);
             }
         }
-        // retorna um iterator da lista de leilões iniciados
+        // retorna um iterator da lista de leilï¿½es iniciados
         return leiloesIniciados.iterator();
     }
-    // adiciona o usuario logado como participante do leilão
+    // adiciona o usuario logado como participante do leilï¿½o
     public void participarLeilao(Leilao leilao)
     {
         usuarioLogado.participarLeilao(leilao);
     }
-    // chama o metodo dar lance minimo do usuário logado
+    // chama o metodo dar lance minimo do usuï¿½rio logado
     public void darLanceMinimo()
     {
         usuarioLogado.darLanceMinimo();
     }
-    // chama o metodo dar lance do usuário logado, passando o valor do lance
+    // chama o metodo dar lance do usuï¿½rio logado, passando o valor do lance
     public void darLance(double valor)
     {
         usuarioLogado.darLance(valor);
     }
-    // chama o metodo de encerrar o leilão ativo do usuario logado no sistema
+    // chama o metodo de encerrar o leilï¿½o ativo do usuario logado no sistema
     public Venda encerrarLeilao()
     {
         return usuarioLogado.encerrarLeilaoAtivo();
